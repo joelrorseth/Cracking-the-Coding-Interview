@@ -34,7 +34,7 @@ bool isUniqueChars(const std::string & str) {
 int main(int argc, char * argv[]) {
    
     if (argc < 2) {
-        std::cout << "Usage: " << argv[0] << " < charsequence >" << std::endl;
+        std::cout << "Usage: " << argv[0] << " <charsequence>" << std::endl;
         exit(0);
     }
 
