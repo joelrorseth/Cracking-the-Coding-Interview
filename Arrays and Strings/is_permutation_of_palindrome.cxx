@@ -11,14 +11,14 @@
 #include <map>
 
 // Solution
-bool isPermutationOfPalindrome(std::string const & str) {
+bool is_permutation_of_palindrome(std::string const & str) {
 
     // Count occurences of each character
     // Only one character (middle of palindrome)
     // should have odd count
     
     std::map<char, int> occ{};
-    int oddCount = 0;
+    int odd_count = 0;
 
     for (auto ch: str) {
 
@@ -26,12 +26,12 @@ bool isPermutationOfPalindrome(std::string const & str) {
 
         // Found matching character in palindrome
         if (occ[ch] % 2 == 0)
-            --oddCount;
+            --odd_count;
         else
-            ++oddCount;
+            ++odd_count;
     }
 
-    return (oddCount <= 1);
+    return (odd_count <= 1);
 }
 
 // Demonstration
@@ -43,7 +43,7 @@ int main(int argc, char * argv[]) {
     }
 
     const std::string str{argv[1]};
-    auto result = isPermutationOfPalindrome(str);
+    auto result = is_permutation_of_palindrome(str);
 
     if (result)
         std::cout << argv[1] << " is a permutation of a palindrome" << std::endl;

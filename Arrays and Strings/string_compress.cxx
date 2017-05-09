@@ -12,7 +12,7 @@
 #include <iostream>
 
 // Solution
-std::string stringCompress(std::string const & str) {
+std::string string_compress(std::string const & str) {
 
     std::string retval{};
 
@@ -57,7 +57,7 @@ int main(int argc, char * argv[]) {
     }
 
     const std::string str{argv[1]};
-    std::string result = stringCompress(str);
+    std::string result = string_compress(str);
 
     std::cout << "After stringCompress(), smallest string is: " << result << std::endl;
 }

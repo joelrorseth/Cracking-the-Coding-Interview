@@ -16,32 +16,32 @@
 
 
 // Solution
-std::string replaceSpaces(std::string const & str, int length) {
+std::string replace_spaces(std::string const & str, int length) {
 
-    int spaceCount = 0;
-    int newLength;
+    int space_count = 0;
+    int new_length;
 
     // Calculate number of spaces in original string
     for (auto ch: str) 
         if (ch == ' ')
-            ++spaceCount;
+            ++space_count;
 
-    newLength = length + (2 * spaceCount);
+    new_length = length + (2 * space_count);
 
     // Create std::string with enough space for new characters
     std::string result{};
-    result.reserve(newLength);
+    result.reserve(new_length);
 
     for (auto ch: str) {
 
         // If space, replace with '%20' in new string
         if (ch == ' ') {
             result.append("%20");
-            newLength += 3;
+            new_length += 3;
         
         } else {
             result.push_back(ch);
-            newLength += 1;
+            new_length += 1;
         }
     }
 
@@ -57,7 +57,7 @@ int main(int argc, char * argv[]) {
     }
 
     const std::string str{argv[1]};
-    std::string result = replaceSpaces(str, str.length());
+    std::string result = replace_spaces(str, str.length());
 
     std::cout << "After replaceSpaces(), the string is:  " << result << std::endl;
 }

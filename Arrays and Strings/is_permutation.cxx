@@ -10,7 +10,7 @@
 #include <iostream>
 
 // Solution
-bool isPermutation(const std::string & s, const std::string & t) {
+bool is_permutation(const std::string & s, const std::string & t) {
     
     if (s.length() != t.length())
         return false;
@@ -35,7 +35,7 @@ int main(int argc, char * argv[]) {
         exit(0);
     }
 
-    auto result = isPermutation(argv[1], argv[2]);
+    auto result = is_permutation(argv[1], argv[2]);
 
     if (result)
         std::cout << argv[1] << " and " << argv[2] 

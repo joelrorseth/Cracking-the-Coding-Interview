@@ -10,7 +10,7 @@
 #include <iostream>
 
 // Solution
-bool isUniqueChars(const std::string & str) {
+bool is_unique_chars(const std::string & str) {
 
     if (str.length() > 128)
         return false;
@@ -38,8 +38,8 @@ int main(int argc, char * argv[]) {
         exit(0);
     }
 
-    auto isUnique = isUniqueChars( argv[1] );
-    if (isUnique)
+    auto is_unique = is_unique_chars( argv[1] );
+    if (is_unique)
         std::cout << argv[1] << " is unique!" << std::endl;
     else
         std::cout << argv[1] << " is not unique!" << std::endl;

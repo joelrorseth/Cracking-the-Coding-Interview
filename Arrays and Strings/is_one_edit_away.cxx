@@ -18,45 +18,45 @@
 
 
 // Solution
-bool isOneEditAway(std::string const & s1, std::string const & s2) {
+bool is_one_edit_away(std::string const & s1, std::string const & s2) {
 
     // More than 1 character difference means multiple edits
-    auto lengthDifference = s1.length() > s2.length() ? s1.length() - s2.length() : s2.length() - s1.length();
-    if (lengthDifference > 1)
+    auto length_difference = s1.length() > s2.length() ? s1.length() - s2.length() : s2.length() - s1.length();
+    if (length_difference > 1)
         return false;
 
     // Determine the longer string
     std::string shorter = s1.length() < s1.length() ? s1 : s2;
     std::string longer = s1.length() < s1.length() ? s2 : s1;
 
-    int shorterIndex = 0, longerIndex = 0;
-    bool foundDifference = false;
+    int shorter_index = 0, longer_index = 0;
+    bool found_difference = false;
 
-    while (longerIndex < longer.length() && shorterIndex < shorter.length()) {
+    while (longer_index < longer.length() && shorter_index < shorter.length()) {
         
-        if (shorter[shorterIndex] != longer[longerIndex]) {
+        if (shorter[shorter_index] != longer[longer_index]) {
 
             // At this point, more than one difference
-            if (foundDifference)
+            if (found_difference)
                 return false;
 
             // Increment difference count
-            foundDifference = true;
+            found_difference = true;
 
             // If same length, 'replacement' edit
             // has occured, so move both pointers
             if (shorter.length() == longer.length())
-                ++shorterIndex;
+                ++shorter_index;
 
         } else {
 
             // Only move short string index if characters matched
-            ++shorterIndex;
+            ++shorter_index;
         }
 
         // Important: Longer string pointer is always incremented
         // because it has the 'extra' character causing difference
-        ++longerIndex;
+        ++longer_index;
     }
 
     return true;
@@ -71,7 +71,7 @@ int main(int argc, char * argv[]) {
     }
 
     const std::string str1{argv[1]}, str2{argv[2]};
-    auto result = isOneEditAway(str1, str2);
+    auto result = is_one_edit_away(str1, str2);
 
     if (result)
         std::cout << str1 << " and " << str2 << " are one edit away" << std::endl;
